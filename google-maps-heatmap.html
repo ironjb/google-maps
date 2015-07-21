@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Google Maps</title>
+		<style type="text/css">
+/* In order to use percent for height the html and body tags must be set to 100% height (I don't think width needs to be set)*/
+html, body {
+	width:100%; height:100%;
+}
+body {
+	margin:0; padding:0;
+}
+#map-canvas {
+	width: 90%;
+	/*max-width:800px;*/
+	height: 90%;
+	/*max-height:400px;*/
+	background-color: #CCCCCC;
+	margin:0 auto;
+	border: 2px solid #888;
+}
+		</style>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=visualization,geometry&amp;sensor=true_or_false"></script>
+		<script type="text/javascript">
+// <![CDATA[
+var mapSettings = {
+	initialZoom: 8,
+	minZoom: 5,
+	maxZoom: 14
+};
+var radiusInMiles = 6378137 * 0.000621371192;
+function initialize() {
+	// var mapCanvas = document.getElementById('map-canvas');
+	var mapCanvas = $('#map-canvas')[0];
+	var mapOptions = {
+		center: new google.maps.LatLng(47,-103),
+		zoom: mapSettings.initialZoom,
+		minZoom: mapSettings.minZoom,
+		maxZoom: mapSettings.maxZoom,
+		mapTypeId: google.maps.MapTypeId.TERRAIN
+	}
+	var map = new google.maps.Map(mapCanvas, mapOptions);
+
+	$.ajax({
+		url: 'JSON/fn-outages.json',
+		success: function (result) {
+			// window.console && console.log(result);
+			var p1 = new google.maps.LatLng(result.outages[1].latitude, result.outages[1].longitude);
+			var p2 = new google.maps.LatLng(result.outages[2].latitude, result.outages[2].longitude);
+			window.console && console.log(p1, p2);
+			var distance = google.maps.geometry.spherical.computeDistanceBetween(p1,p2, radiusInMiles);
+			var distanceRounded = Math.round(distance*100)/100;
+			window.console && console.log('Miles:', distance, distanceRounded);
+
+			var heatmapData = [];
+			for (var i = 0, outage; outage = result.outages[i]; i++) {
+				var latLng = new google.maps.LatLng(outage.latitude, outage.longitude);
+				var hours = outage.duration_in_hours;
+				var weightedLocation = {
+					location: latLng,
+					weight: hours
+				};
+				heatmapData.push(weightedLocation);
+				// heatmapData.push(latLng);
+			}
+
+			var heatmap = new google.maps.visualization.HeatmapLayer({
+				data: heatmapData,
+				dissipating: true,
+				radius: 25,
+				// maxIntensity: 25,
+				map: map
+			});
+		}
+	});
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+// $( document ).ready(function() {
+// 	$('#test').click(function() {
+// 		window.console && console.log('test');
+// 	});
+// });
+
+// ]]>
+		</script>
+	</head>
+	<body>
+		<p>Google Map Test</p>
+		<button id="test" type="button">Test</button>
+		<div id="map-canvas"></div>
+		<p>footer</p>
+	</body>
+</html>

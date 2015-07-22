@@ -68,10 +68,19 @@ function initialize() {
 			var heatmap = new google.maps.visualization.HeatmapLayer({
 				data: heatmapData,
 				dissipating: true,
-				radius: 25,
+				// radius: 25,
 				// maxIntensity: 25,
 				map: map
 			});
+			// heatmap.setOptions();
+			google.maps.event.addDomListener(map, 'idle', setHeatmapRadius);
+
+			function setHeatmapRadius() {
+				var zoom = map.getZoom();
+				var radius = zoom*2;
+				window.console && console.log(zoom, radius);
+				heatmap.setOptions({radius:radius});
+			}
 		}
 	});
 }

@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 					srcPrefix: 'bower_components/bootstrap/'
 				},
 				files: {
-					'less/bootstrap/': 'less/',
+					'css/bootstrap/': 'dist/css/*.css',
 					'js/bootstrap/': 'dist/js/bootstrap.min.js',
 					'fonts/bootstrap/': 'dist/fonts/'
 				}

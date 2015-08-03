@@ -26,9 +26,11 @@ body {
 		<script type="text/javascript">
 // <![CDATA[
 var mapSettings = {
-	initialZoom: 8,
+	initialZoom: 7,
 	minZoom: 5,
-	maxZoom: 14
+	maxZoom: 14,
+	maxDistance: 200,
+	clusterGridSize: 100
 };
 var radiusInMiles = 6378137 * 0.000621371192;
 function initialize() {
@@ -43,13 +45,18 @@ function initialize() {
 	}
 	var map = new google.maps.Map(mapCanvas, mapOptions);
 
+	$('#test').click(function(e) {
+		e.preventDefault();
+		window.console && console.log('button clicked',e);
+	});
+
 	$.ajax({
 		url: 'JSON/fn-outages.json',
 		success: function (result) {
 
 			var markers = [];
 			for (var i = 0, outage; outage = result.outages[i]; i++) {
-				var distanceFromNearestPoint = 100000000000000;
+				var distanceFromNearestPoint = null;
 				var currentPoint = new google.maps.LatLng(outage.latitude,outage.longitude);
 
 				for (var j = 0, otherOutage; otherOutage = result.outages[j]; j++) {
@@ -58,35 +65,21 @@ function initialize() {
 						var otherPoint = new google.maps.LatLng(otherOutage.latitude,otherOutage.longitude);
 						var distanceBetweenPoints = google.maps.geometry.spherical.computeDistanceBetween(currentPoint, otherPoint);
 
-						if (distanceBetweenPoints === 0) {
-							// window.console && console.log('[' + i + ',' + j + ']');
-							// window.console && console.log(currentPoint, otherPoint);
-						}
-						if (distanceBetweenPoints < distanceFromNearestPoint) {
-							// window.console && console.log('old distance: ' + distanceFromNearestPoint);
+						if (distanceFromNearestPoint === null || distanceBetweenPoints < distanceFromNearestPoint) {
 							distanceFromNearestPoint = distanceBetweenPoints;
-							// window.console && console.log('new distance: ' + distanceFromNearestPoint);
 						}
-					} else {
-						// These are the same so don't do anything.
-						// window.console && console.log('same points?:');
-						// window.console && console.log(outage);
-						// window.console && console.log(otherOutage);
 					}
 				}
-
 				window.console && console.log(i + ') distance to nearest: ', distanceFromNearestPoint);
 
-				if (distanceFromNearestPoint < 1000) {
-					// var latLng = new google.maps.LatLng(outage.latitude, outage.longitude);
+				if (distanceFromNearestPoint < mapSettings.maxDistance) {
 					var marker = new google.maps.Marker({position: currentPoint});
 					markers.push(marker);
 				}
 			}
 
-			var mcOptions = {gridSize: 100, maxZoom: mapSettings.maxZoom};
+			var mcOptions = {gridSize: mapSettings.clusterGridSize, maxZoom: mapSettings.maxZoom};
 			var mc = new MarkerClusterer(map, markers, mcOptions);
-			// var mc = new MarkerClusterer(map, markers);
 		}
 	});
 }
@@ -104,7 +97,10 @@ google.maps.event.addDomListener(window, 'load', initialize);
 	</head>
 	<body>
 		<p>Google Map Test</p>
-		<button id="test" type="button">Test</button>
+		<form action="none" id="addressForm" name="addressForm">
+			<input type="text" id="address" name="address" />
+			<button id="submitAddress" name="submitAddress" type="submit">Test</button>
+		</form>
 		<div id="map-canvas"></div>
 		<p>footer</p>
 	</body>

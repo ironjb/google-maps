@@ -49,9 +49,39 @@ function initialize() {
 
 			var markers = [];
 			for (var i = 0, outage; outage = result.outages[i]; i++) {
-				var latLng = new google.maps.LatLng(outage.latitude, outage.longitude);
-				var marker = new google.maps.Marker({position: latLng});
-				markers.push(marker);
+				var distanceFromNearestPoint = 100000000000000;
+				var currentPoint = new google.maps.LatLng(outage.latitude,outage.longitude);
+
+				for (var j = 0, otherOutage; otherOutage = result.outages[j]; j++) {
+					// Only calculate distance when the points are not the same.
+					if (i !== j) {
+						var otherPoint = new google.maps.LatLng(otherOutage.latitude,otherOutage.longitude);
+						var distanceBetweenPoints = google.maps.geometry.spherical.computeDistanceBetween(currentPoint, otherPoint);
+
+						if (distanceBetweenPoints === 0) {
+							// window.console && console.log('[' + i + ',' + j + ']');
+							// window.console && console.log(currentPoint, otherPoint);
+						}
+						if (distanceBetweenPoints < distanceFromNearestPoint) {
+							// window.console && console.log('old distance: ' + distanceFromNearestPoint);
+							distanceFromNearestPoint = distanceBetweenPoints;
+							// window.console && console.log('new distance: ' + distanceFromNearestPoint);
+						}
+					} else {
+						// These are the same so don't do anything.
+						// window.console && console.log('same points?:');
+						// window.console && console.log(outage);
+						// window.console && console.log(otherOutage);
+					}
+				}
+
+				window.console && console.log(i + ') distance to nearest: ', distanceFromNearestPoint);
+
+				if (distanceFromNearestPoint < 1000) {
+					// var latLng = new google.maps.LatLng(outage.latitude, outage.longitude);
+					var marker = new google.maps.Marker({position: currentPoint});
+					markers.push(marker);
+				}
 			}
 
 			var mcOptions = {gridSize: 100, maxZoom: mapSettings.maxZoom};

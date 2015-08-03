@@ -2,6 +2,8 @@
 <html>
 	<head>
 		<title>Google Maps</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap/bootstrap.min.css">
 		<style type="text/css">
 /* In order to use percent for height the html and body tags must be set to 100% height (I don't think width needs to be set)*/
 html, body {
@@ -10,17 +12,20 @@ html, body {
 body {
 	margin:0; padding:0;
 }
+.map-container {
+	height:90%;
+}
 #map-canvas {
-	width: 90%;
+	/*width: 90%;*/
 	/*max-width:800px;*/
-	height: 90%;
+	height: 100%;
 	/*max-height:400px;*/
 	background-color: #CCCCCC;
 	margin:0 auto;
 	border: 2px solid #888;
 }
 		</style>
-		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&amp;libraries=visualization,geometry&amp;sensor=true_or_false"></script>
 		<script type="text/javascript" src="/js/js-marker-clusterer/markerclusterer_compiled.js"></script>
 		<script type="text/javascript">
@@ -28,13 +33,14 @@ body {
 var mapSettings = {
 	initialZoom: 7,
 	minZoom: 5,
-	maxZoom: 14,
+	maxZoom: 15,
 	maxDistance: 200,
 	clusterGridSize: 100
 };
 var radiusInMiles = 6378137 * 0.000621371192;
+var geocoder;
 function initialize() {
-	// var mapCanvas = document.getElementById('map-canvas');
+	geocoder = new google.maps.Geocoder();
 	var mapCanvas = $('#map-canvas')[0];
 	var mapOptions = {
 		center: new google.maps.LatLng(47,-103),
@@ -45,9 +51,47 @@ function initialize() {
 	}
 	var map = new google.maps.Map(mapCanvas, mapOptions);
 
-	$('#test').click(function(e) {
-		e.preventDefault();
-		window.console && console.log('button clicked',e);
+	// $('#test').click(function(e) {
+	// 	e.preventDefault();
+	// 	window.console && console.log('button clicked',e);
+	// });
+	$('#addressForm').submit(function (event) {
+		event.preventDefault();
+		var address = $('#address').val();
+		window.console && console.log(address);
+		var encodedAddress = encodeURIComponent(address);
+
+		$('html, body').animate({ scrollTop: ($('a[name=mapTop]').offset().top) }, 200);
+
+		// Some Addresses/Zips to search
+		// 2160 8th Ave E, Williston, ND, 58801
+		//
+		// 614 E Hughes St., Glendive, MT, 59330
+		//
+
+		geocoder.geocode({address: address}, function (results, status) {
+			if (status === google.maps.GeocoderStatus.OK) {
+				window.console && console.log(results);
+				map.setCenter(results[0].geometry.location);
+				if (results[0].geometry.bounds) {
+					map.fitBounds(results[0].geometry.bounds);
+				} else {
+					map.setZoom(mapSettings.maxZoom);
+				}
+			}
+		});
+
+		// $.ajax({
+		// 	url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + encodedAddress,
+		// 	success: function (result) {
+		// 		if (result.status === 'OK') {
+		// 			window.console && console.log(result);
+
+		// 		} else {
+		// 			window.console && console.error('Not an address');
+		// 		}
+		// 	}
+		// });
 	});
 
 	$.ajax({
@@ -96,12 +140,39 @@ google.maps.event.addDomListener(window, 'load', initialize);
 		</script>
 	</head>
 	<body>
-		<p>Google Map Test</p>
-		<form action="none" id="addressForm" name="addressForm">
-			<input type="text" id="address" name="address" />
-			<button id="submitAddress" name="submitAddress" type="submit">Test</button>
-		</form>
-		<div id="map-canvas"></div>
-		<p>footer</p>
+		<div class="container">
+			<div class="jumbotron">
+				<h1>Outages</h1>
+				<p>Using Marker Clusterer along with Google Maps to display outages in certain areas.</p>
+			</div>
+			<form action="none" id="addressForm" name="addressForm" class="form-horizontal">
+				<div class="row">
+					<div class="col-sm-8">
+						<div class="form-group">
+							<label for="address" class="col-sm-4 control-label">Address:</label>
+							<div class="col-sm-8">
+								<input type="text" id="address" name="address" class="form-control" />
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="form-group">
+							<div class="col-sm-12">
+								<button id="submitAddress" name="submitAddress" type="submit" class="btn btn-primary">Search</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<a name="mapTop" id="mapTop" />
+		<div class="container map-container">
+			<div id="map-canvas"></div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 text-center">Footer</div>
+			</div>
+		</div>
 	</body>
 </html>

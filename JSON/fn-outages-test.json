@@ -1,0 +1,95 @@
+{
+	"outages": [
+		{ "latitude":	46.84538528,	"longitude":	-100.9047561,	"duration_in_hours":	0 }
+		,{ "latitude":	48.10255437,	"longitude":	-105.5180654,	"duration_in_hours":	25 }
+		,{ "latitude":	48.08857464,	"longitude":	-105.6241819,	"duration_in_hours":	25 }
+		,{ "latitude":	48.16379394,	"longitude":	-103.6088737,	"duration_in_hours":	1 }
+		,{ "latitude":	48.16429302,	"longitude":	-103.6090528,	"duration_in_hours":	1 }
+		,{ "latitude":	48.16379394,	"longitude":	-103.6088737,	"duration_in_hours":	1 }
+		,{ "latitude":	48.16379394,	"longitude":	-103.6088737,	"duration_in_hours":	1 }
+		,{ "latitude":	46.82315773,	"longitude":	-100.8877029,	"duration_in_hours":	4 }
+		,{ "latitude":	48.16379394,	"longitude":	-103.6088737,	"duration_in_hours":	1 }
+		,{ "latitude":	48.16379394,	"longitude":	-103.6088737,	"duration_in_hours":	1 }
+		,{ "latitude":	48.16379394,	"longitude":	-103.6088737,	"duration_in_hours":	1 }
+		,{ "latitude":	48.16379394,	"longitude":	-103.6088737,	"duration_in_hours":	1 }
+		,{ "latitude":	48.16379394,	"longitude":	-103.6088737,	"duration_in_hours":	1 }
+		,{ "latitude":	47.29369366,	"longitude":	-101.6246928,	"duration_in_hours":	23 }
+		,{ "latitude":	46.83979216,	"longitude":	-100.8940377,	"duration_in_hours":	8 }
+		,{ "latitude":	46.8812096,		"longitude":	-102.7777204,	"duration_in_hours":	0 }
+		,{ "latitude":	46.40330774,	"longitude":	-105.8497021,	"duration_in_hours":	1 }
+		,{ "latitude":	48.77671937,	"longitude":	-104.5523007,	"duration_in_hours":	25 }
+		,{ "latitude":	46.84348463,	"longitude":	-100.8805492,	"duration_in_hours":	1 }
+		,{ "latitude":	46.39790046,	"longitude":	-105.832607,	"duration_in_hours":	0 }
+		,{ "latitude":	46.88972106,	"longitude":	-102.7921093,	"duration_in_hours":	19 }
+		,{ "latitude":	46.88619667,	"longitude":	-102.8136025,	"duration_in_hours":	23 }
+		,{ "latitude":	46.88484238,	"longitude":	-102.8127077,	"duration_in_hours":	21 }
+		,{ "latitude":	48.10013999,	"longitude":	-105.6398089,	"duration_in_hours":	24 }
+		,{ "latitude":	45.98788134,	"longitude":	-102.6149362,	"duration_in_hours":	14 }
+		,{ "latitude":	46.88674957,	"longitude":	-102.7879811,	"duration_in_hours":	0 }
+		,{ "latitude":	46.8864805,		"longitude":	-102.7737634,	"duration_in_hours":	23 }
+		,{ "latitude":	46.89029545,	"longitude":	-102.7836825,	"duration_in_hours":	0 }
+		,{ "latitude":	48.09592181,	"longitude":	-105.6403567,	"duration_in_hours":	24 }
+		,{ "latitude":	44.67508152,	"longitude":	-106.978899,	"duration_in_hours":	2 }
+		,{ "latitude":	46.91114751,	"longitude":	-104.005181,	"duration_in_hours":	3 }
+		,{ "latitude":	46.41961423,	"longitude":	-105.83679,		"duration_in_hours":	0 }
+		,{ "latitude":	46.83200493,	"longitude":	-100.9022996,	"duration_in_hours":	4 }
+		,{ "latitude":	47.0961521,		"longitude":	-104.707611,	"duration_in_hours":	1 }
+		,{ "latitude":	46.88505318,	"longitude":	-103.1978419,	"duration_in_hours":	25 }
+		,{ "latitude":	46.86967352,	"longitude":	-102.7859467,	"duration_in_hours":	22 }
+		,{ "latitude":	47.0967412,		"longitude":	-104.7079338,	"duration_in_hours":	1 }
+		,{ "latitude":	46.84351098,	"longitude":	-100.8793041,	"duration_in_hours":	0 }
+		,{ "latitude":	46.84282818,	"longitude":	-100.8801974,	"duration_in_hours":	0 }
+		,{ "latitude":	46.87493573,	"longitude":	-102.806536,	"duration_in_hours":	2 }
+,{"latitude":47.10105692688282,"longitude":-104.71242070198059,"duration_in_hours":18}
+,{"latitude":47.10092546916331,"longitude":-104.71252799034119,"duration_in_hours":22}
+,{"latitude":47.10080861758455,"longitude":-104.7126567363739,"duration_in_hours":23}
+,{"latitude":47.100647946245026,"longitude":-104.71282839775085,"duration_in_hours":24}
+,{"latitude":47.10048727442064,"longitude":-104.71291422843933,"duration_in_hours":20}
+,{"latitude":47.10039963503932,"longitude":-104.71315026283264,"duration_in_hours":6}
+,{"latitude":47.100969288439195,"longitude":-104.71222758293152,"duration_in_hours":4}
+,{"latitude":47.10088164985131,"longitude":-104.71199154853821,"duration_in_hours":16}
+,{"latitude":47.100735585217606,"longitude":-104.71177697181702,"duration_in_hours":23}
+,{"latitude":47.10067715925192,"longitude":-104.71156239509583,"duration_in_hours":3}
+,{"latitude":47.10042884818247,"longitude":-104.71158385276794,"duration_in_hours":21}
+,{"latitude":47.10010750272642,"longitude":-104.71190571784973,"duration_in_hours":10}
+,{"latitude":47.10015132267552,"longitude":-104.71252799034119,"duration_in_hours":10}
+,{"latitude":47.094863455094334,"longitude":-104.718257188797,"duration_in_hours":21}
+,{"latitude":47.09468815767392,"longitude":-104.71847176551819,"duration_in_hours":22}
+,{"latitude":47.09445442688239,"longitude":-104.71857905387878,"duration_in_hours":7}
+,{"latitude":47.09414765366168,"longitude":-104.71838593482971,"duration_in_hours":12}
+,{"latitude":47.09438138579964,"longitude":-104.71774220466614,"duration_in_hours":21}
+,{"latitude":47.09477580645625,"longitude":-104.71810698509216,"duration_in_hours":9}
+,{"latitude":47.097666674743714,"longitude":-104.71253871917725,"duration_in_hours":16}
+,{"latitude":46.882666545839484,"longitude":-102.78625667095184,"duration_in_hours":5}
+,{"latitude":46.88249055110543,"longitude":-102.78625667095184,"duration_in_hours":25}
+,{"latitude":46.882270556875994,"longitude":-102.78631031513214,"duration_in_hours":12}
+,{"latitude":46.8820945608429,"longitude":-102.78634250164032,"duration_in_hours":4}
+,{"latitude":46.88203589537025,"longitude":-102.78602063655853,"duration_in_hours":4}
+,{"latitude":46.88198456302906,"longitude":-102.78550565242767,"duration_in_hours":13}
+,{"latitude":46.88235855467601,"longitude":-102.78535544872284,"duration_in_hours":17}
+,{"latitude":46.88271054443278,"longitude":-102.78568804264069,"duration_in_hours":21}
+,{"latitude":46.8826372134239,"longitude":-102.78463661670685,"duration_in_hours":8}
+,{"latitude":46.88259321477045,"longitude":-102.7841967344284,"duration_in_hours":20}
+,{"latitude":46.88259321477045,"longitude":-102.78376758098602,"duration_in_hours":11}
+,{"latitude":46.88218255893161,"longitude":-102.7837461233139,"duration_in_hours":23}
+,{"latitude":46.88185256535472,"longitude":-102.78387486934662,"duration_in_hours":24}
+,{"latitude":46.88184523214108,"longitude":-102.7848082780838,"duration_in_hours":22}
+,{"latitude":46.903417409543906,"longitude":-102.78281807899475,"duration_in_hours":5}
+,{"latitude":46.902977591837285,"longitude":-102.78281807899475,"duration_in_hours":6}
+,{"latitude":46.90234718016539,"longitude":-102.78286099433899,"duration_in_hours":23}
+,{"latitude":46.90193667555674,"longitude":-102.78283953666687,"duration_in_hours":21}
+,{"latitude":46.90181938794836,"longitude":-102.78245329856873,"duration_in_hours":17}
+,{"latitude":46.90290428853535,"longitude":-102.78228163719177,"duration_in_hours":21}
+,{"latitude":46.903373427935605,"longitude":-102.78131604194641,"duration_in_hours":17}
+,{"latitude":46.903344106843356,"longitude":-102.78020024299622,"duration_in_hours":6}
+,{"latitude":46.903417409543906,"longitude":-102.78056502342224,"duration_in_hours":19}
+,{"latitude":46.90161413401631,"longitude":-102.78279662132263,"duration_in_hours":20}
+,{"latitude":46.901130318067345,"longitude":-102.78286099433899,"duration_in_hours":9}
+,{"latitude":46.900617175168726,"longitude":-102.78294682502747,"duration_in_hours":9}
+,{"latitude":46.9003239484502,"longitude":-102.78286099433899,"duration_in_hours":15}
+,{"latitude":46.90003072012796,"longitude":-102.78290390968323,"duration_in_hours":13}
+,{"latitude":46.89978147479321,"longitude":-102.78290390968323,"duration_in_hours":6}
+,{"latitude":48.081014877171384,"longitude":-101.5631103515625,"duration_in_hours":16}
+
+	]
+}

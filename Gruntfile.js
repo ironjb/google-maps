@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 				files: {
 					'css/bootstrap/': 'dist/css/*.css',
 					'js/bootstrap/': 'dist/js/bootstrap.min.js',
-					'fonts/bootstrap/': 'dist/fonts/'
+					'css/fonts/': 'dist/fonts/'
 				}
 			},
 			jquery: {

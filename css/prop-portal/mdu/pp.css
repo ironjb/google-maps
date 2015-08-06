@@ -1,0 +1,161 @@
+/* default brand colors here */
+/* Your custom non-branded css here */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 130px;
+  margin-top: 50px;
+}
+.debug {
+  border: 2px dotted #39D;
+  padding: 2px 6px;
+  margin: 5px 0;
+  border-radius: 6px;
+}
+.my-blockquote {
+  font-family: Times, "Times New Roman", Georgia, serif;
+  font-weight: 600;
+  font-style: italic;
+}
+.logo {
+  margin-top: 30px;
+}
+.has-error input.ng-dirty.ng-invalid {
+  border: 1px solid #a00;
+  background-color: #f2dede;
+}
+.has-error input.ng-dirty.ng-valid {
+  border: 1px solid #0a0;
+  background-color: #dff0d8;
+}
+p.no-pad,
+form-group.no-pad {
+  margin-bottom: 0;
+}
+.centered {
+  text-align: center;
+}
+.notice {
+  color: #A00;
+}
+.service_on {
+  font-weight: bold;
+  color: #090;
+}
+.service_pending {
+  font-weight: bold;
+  color: #fdd017;
+}
+.service_off {
+  font-weight: bold;
+  color: #900;
+}
+hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.faq-answer {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+/*make a scrollable table body  */
+.scroll_container {
+  max-height: 360px !important;
+  width: 100%;
+  margin: 0;
+  overflow-y: auto;
+}
+.table-scrollable {
+  margin: 0;
+  padding: 0;
+}
+.larger {
+  font-size: larger;
+}
+.smaller {
+  font-size: smaller;
+}
+.form-group.required label:after {
+  content: "\2731";
+  color: #A00;
+  padding-left: 6px;
+}
+#footer {
+  /* sticky footer  */
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 130px;
+  margin-top: 30px;
+  padding: 20px 0;
+  background-color: #2f353e;
+  color: #CCC;
+  font-size: 85%;
+  font-weight: normal;
+}
+#footer .bright {
+  color: #fff;
+}
+#footer a {
+  text-decoration: underline;
+  color: #cccccc /* #A2DCF4  #82ba00 #7cc4e7 */;
+}
+#footer a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+/* transitions */
+.ng-hide-add,
+.ng-hide-remove {
+  display: block !important;
+}
+.form-transition {
+  -webkit-transition: 1.0s linear all;
+  /* Chrome */
+  transition: 1.0s linear all;
+  /* height: 560px TODO: fix this to use a calculated height */
+  opacity: 1;
+}
+.form-transition.ng-hide {
+  -webkit-transition: 0s linear all;
+  /* Chrome */
+  transition: 0s linear all;
+  height: 0;
+  opacity: 0;
+}
+.vertical-center.modal {
+  text-align: center;
+}
+.vertical-center.modal:before {
+  display: inline-block;
+  vertical-align: middle;
+  content: " ";
+  height: 100%;
+}
+.vertical-center .modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+.modal-processing {
+  padding: 40px;
+  margin-bottom: 100px;
+  background-color: #FFFFFF;
+  border: 2px solid #000000;
+}
+.modal-processing img {
+  width: 64px;
+  padding-right: 20px;
+}
+.modal-header.alert {
+  margin-bottom: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+/* MDU custom branded css here */
+.brand-primary-text {
+  color: #cd1041;
+}
+

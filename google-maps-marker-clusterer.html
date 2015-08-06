@@ -35,7 +35,7 @@ var mapSettings = {
 	minZoom: 5,
 	maxZoom: 15,
 	maxDistance: 200,
-	clusterGridSize: 100
+	clusterGridSize: 100		// default 60 pixels
 };
 var radiusInMiles = 6378137 * 0.000621371192;
 var geocoder;
@@ -112,6 +112,7 @@ function initialize() {
 			var markers = [];
 			for (var i = 0, outage; outage = result.outages[i]; i++) {
 				var distanceFromNearestPoint = null;
+				var markersWithinDistance = 0;
 				var currentPoint = new google.maps.LatLng(outage.latitude,outage.longitude);
 
 				for (var j = 0, otherOutage; otherOutage = result.outages[j]; j++) {
@@ -123,9 +124,14 @@ function initialize() {
 						if (distanceFromNearestPoint === null || distanceBetweenPoints < distanceFromNearestPoint) {
 							distanceFromNearestPoint = distanceBetweenPoints;
 						}
+
+						if (distanceBetweenPoints < mapSettings.maxDistance) {
+							markersWithinDistance++;
+						}
 					}
 				}
 				// window.console && console.log(i + ') distance to nearest: ', distanceFromNearestPoint);
+				// window.console && console.log('markers within distance for:' + i + '=' + markersWithinDistance);
 
 				if (distanceFromNearestPoint < mapSettings.maxDistance) {
 					var marker = new google.maps.Marker({position: currentPoint});
@@ -133,7 +139,11 @@ function initialize() {
 				}
 			}
 
-			var mcOptions = {gridSize: mapSettings.clusterGridSize, maxZoom: mapSettings.maxZoom};
+			var mcOptions = {
+				gridSize: mapSettings.clusterGridSize
+				// , maxZoom: mapSettings.maxZoom
+				, averageCenter: true
+			};
 			var mc = new MarkerClusterer(map, markers, mcOptions);
 		}
 	});

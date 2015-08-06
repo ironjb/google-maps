@@ -36,14 +36,14 @@ body {
 	margin: 6px 0;
 }
 
-.search-box {
+/*.search-box {
 	width:100%;
 	padding: 5px;
 	border: 3px solid #999;
 	font-size:1.25em;
-}
+}*/
 
-.search-button{
+/*.search-button{
 	display:none;
 	border-radius: 0;
 	background: #0099ff;
@@ -51,7 +51,7 @@ body {
 	border: 1px solid #FFFFFF;
 	padding:4px;
 	font-size: 1.25em;
-}
+}*/
 #legend {
 	display: none;
 	background: white;
@@ -228,37 +228,52 @@ google.maps.event.addDomListener(window, 'load', initialize);
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="container">
 				<div class="navbar-header">
-					<a class="navbar-brand hidden-xs" href="#/success"><img alt="Brand logo" src="/images/company-logo.png"></a>
+					<a class="navbar-brand hidden-xs" href="#"><img alt="Brand logo" src="/images/company-logo.png"></a>
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#/properties">MDU Property Portal</a>
+					<a class="navbar-brand" href="#">MDU</a>
 				</div>
 				<div id="navbar" class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">
-						<li>
-							<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Manage Properties <span class="caret"></span></a>
+						<!-- <li>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Customer Service <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#properties/list">View/Edit My Properties</a></li>
-								<li><a href="#properties/search">Search &amp; Add Properties</a></li>
-								<li style="" data-ng-show="user.hasCSA" class="divider"></li>
-								<li style="" class="" data-ng-show="user.hasCSA"><a href="#csa/view">View/Edit My CSA</a></li>
+								<li><a href="#">online account services</a></li>
+								<li><a href="#">payment options</a></li>
+								<li><a href="#">start services</a></li>
+								<li><a href="#">stop or transfer service</a></li>
+								<li><a href="#">understanding your bill</a></li>
+								<li><a href="#">communications - bill inserts</a></li>
+								<li><a href="#">bill assistance</a></li>
+								<li><a href="#">property owners &amp; landlords</a></li>
 							</ul>
 						</li>
 						<li >
-							<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Help<span class="caret"></span></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Safty &amp; Education<span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#help/faqs">FAQ's</a></li>
-								<li><a href="#help/contact">Contact Us</a></li>
+								<li><a href="#">outage and storm information</a></li>
+								<li><a href="#">emergency information</a></li>
+								<li><a href="#">call before you dig</a></li>
+								<li><a href="#">natural gas safety tips</a></li>
+								<li><a href="#">pipeline safety</a></li>
+								<li><a href="#">powerline safety</a></li>
+								<li><a href="#">landscaping guidelines</a></li>
+								li*5>a[href=#]
 							</ul>
-						</li>
-						<li ><a href="#profile">My Profile</a></li>
+						</li> -->
+						<li><a href="#">About Us</a></li>
+						<li><a href="#">News</a></li>
+						<li><a href="#">FAQs</a></li>
+						<li><a href="#">Careers</a></li>
+						<li><a href="#">Contact Us</a></li>
+						<li><a href="#">EMERGENCY information</a></li>
 					</ul>
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#/" data-ng-click="logout();">Logout</a></li>
-					</ul>
+					<!-- <ul class="nav navbar-nav navbar-right">
+						<li><a href="#">Login</a></li>
+					</ul> -->
 				</div>
 				<!--/.nav-collapse -->
 			</div>
@@ -268,9 +283,13 @@ google.maps.event.addDomListener(window, 'load', initialize);
 				<h2>Outages</h2>
 			</div>
 			<div class="container map-container">
-				<form action="none" id="addressForm" name="addressForm" class="search-form">
-					<input type="text" id="address" name="address" class="search-box" placeholder="Search" />
-					<button id="submitAddress" name="submitAddress" class="search-button">Find</button>
+				<form action="none" id="addressForm" name="addressForm" class="search-form ">
+					<div class="input-group">
+						<input type="text" id="address" name="address" class="search-box form-control" placeholder="Enter Zip Code or Address..." />
+						<div class="input-group-btn">
+							<button id="submitAddress" name="submitAddress" class="search-button btn btn-default">Find</button>
+						</div>
+					</div>
 				</form>
 				<div id="map-canvas"></div>
 				<div id="legend">
@@ -286,7 +305,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 			</div>
 		</div>
 		<div id='footer' class='text-center'>
-			<h5 class="bright">MDU PROPERTY PORTAL</h5>
+			<h5 class="bright">Montana Dakota Utilities</h5>
 			<a href="http://www.montana-dakota.com/" target="_blank">Montana-Dakota Utilities Company</a> &mdash; &copy; 2015<br/>
 			A Subsidiary of <a href="http://www.mdu.com/" target="_blank">MDU Resources Group, Inc.</a><br/>
 			<a href="http://www.montana-dakota.com/legal/legal-statement" target="_blank">

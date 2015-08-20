@@ -177,7 +177,11 @@ function initialize() {
 		// url: 'JSON/fn-outages-test.json?t=' + Math.round(Math.random() *1000000000),
 		// url: 'JSON/fn-outages-test.json?t=' + dayToMinute,
 		url: 'JSON/fn-outages-test.json?t=' + currentDate.getTime(),
+		contentType: 'application/json',
+		dataType: 'json',
 		success: function (result) {
+			var jsonResult = JSON.parse(result);
+			window.console && console.log(jsonResult, result);
 
 			var markers = [];
 			for (var i = 0, outage; outage = result.outages[i]; i++) {

@@ -1,23 +1,24 @@
 #Google Maps Tutorial
 
+
 ###May help with showing outage:
-https://developers.google.com/maps/documentation/javascript/heatmaplayer
-https://developers.google.com/maps/documentation/javascript/examples/layer-heatmap
-https://github.com/googlemaps/js-marker-clusterer
+[Google Maps API: Heatmapplayer](https://developers.google.com/maps/documentation/javascript/heatmaplayer)  
+[Google Maps API: Layer-Heatmap](https://developers.google.com/maps/documentation/javascript/examples/layer-heatmap)  
+[Marker Clusterer](https://github.com/googlemaps/js-marker-clusterer)  
 
 ###Spherical documentation
-https://developers.google.com/maps/documentation/javascript/reference#spherical
+[Google Maps API: Spherical](https://developers.google.com/maps/documentation/javascript/reference#spherical)  
 
 ###Handling many markers
-http://www.svennerberg.com/2009/01/handling-large-amounts-of-markers-in-google-maps/
-https://github.com/googlemaps/js-marker-clusterer
+[Handling Large Amounts of Markers](http://www.svennerberg.com/2009/01/handling-large-amounts-of-markers-in-google-maps/)  
+[Marker Clusterer](https://github.com/googlemaps/js-marker-clusterer)  
 
 ###Geocode
-https://developers.google.com/maps/documentation/javascript/examples/geocoding-simple
-https://developers.google.com/maps/documentation/geocoding/intro
+[Google Maps API: Geocodeing - simple](https://developers.google.com/maps/documentation/javascript/examples/geocoding-simple)  
+[Google Maps API: Geocoding - intro](https://developers.google.com/maps/documentation/geocoding/intro)  
 
 ###Examples
-https://developers.google.com/maps/documentation/javascript/examples/
+[Google Maps API: Examples](https://developers.google.com/maps/documentation/javascript/examples/)  
 
 ###Tutorials
 ~~https://developers.google.com/maps/tutorials/~~
@@ -26,13 +27,17 @@ https://developers.google.com/maps/documentation/javascript/examples/
 ~~https://developers.google.com/maps/tutorials/visualizing/earthquakes~~
 
 ###Other examples of outages
-http://outagemap.georgiapower.com/external/default.html
-http://www.pge.com/myhome/outages/outage/
+[Georgia Power](http://outagemap.georgiapower.com/external/default.html)  
+[PGE](http://www.pge.com/myhome/outages/outage/)  
 
 ###Map Boundary Data
-https://productforums.google.com/forum/#!topic/maps/C1qeu-95bdE
-http://www.mapboundary.com/North_Dakota/Dickinson%2c_ND_CBSA.aspx
-http://maps.huge.info/
+[productforums.google.com](https://productforums.google.com/forum/#!topic/maps/C1qeu-95bdE)  
+[mapboundary.com](http://www.mapboundary.com/North_Dakota/Dickinson%2c_ND_CBSA.aspx)  
+[maps.huge.info](http://maps.huge.info/)  
+[mapzen.com](https://mapzen.com/data/borders/)  
+
+###Question on Autocomplete with submit form
+[google maps trigger search box on button click](http://stackoverflow.com/questions/20407045/google-maps-trigger-search-box-on-button-click)  
 
 ##Grunt and Bower setup
 to get bower and grunt running... first do

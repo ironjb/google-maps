@@ -1,0 +1,96 @@
+.navbar-brand img.logo {
+  padding-top: 0;
+  margin-top: -5px;
+}
+
+.map-container {
+	height:90%;
+}
+.map-container #map-canvas {
+	height:400px;
+	height: 70vh;
+	background-color: #CCCCCC;
+	margin:0 auto 15px;
+	border: 2px solid #888;
+}
+
+#mapTopLeftCtrl {
+	width:80%;
+	max-width:500px;
+	display: none;
+	margin: 6px 0;
+}
+
+#mapBottomRightCtrl {
+	position: relative;
+	margin:10px;
+}
+
+#legend {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	min-width: 100px;
+}
+#ClusterLegend {
+	min-width:140px;
+}
+#HeatmapLegend {
+	min-width:200px;
+}
+#legend h3 {
+	margin-top:0;
+}
+#legend img {
+	vertical-align: middle;
+	width: 20px;
+}
+
+#legend .panel {
+	margin-bottom:0;
+}
+
+.legend-color {
+	display: inline-block;
+	height: 16px;
+	width: 20px;
+	border: 1px solid #ddd;
+	vertical-align: middle;
+	margin: 4px 0;
+}
+.legend-color-1 {
+	background-color: #FF0000;
+}
+.legend-color-2 {
+	background-color: #FFFF00;
+}
+.legend-color-3 {
+	background-color: #00FF00;
+}
+
+#mapBottomLeftCtrl {
+	margin-left:10px;
+}
+
+.map-control {
+	display: none;
+}
+
+#map-canvas .map-control {
+	display:block;
+}
+
+#map-canvas #mapTopLeftCtrl {
+	display:block;
+}
+
+@media (min-width: 434px) {
+	#map-canvas #mapTopLeftCtrl {
+		width:60%;
+	}
+}
+@media (min-width: 768px) {
+	#map-canvas #legend {
+		display:block;
+	}
+}

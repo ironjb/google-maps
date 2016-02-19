@@ -109,7 +109,7 @@ function initialize() {
 
 	$.ajax({
 		// url: 'JSON/fn-outages-test.json?t=' + Math.round(Math.random() *1000000000),
-		url: 'JSON/fn-outages-test.json?t=' + dayToMinute,
+		url: '/JSON/fn-outages-test.json?t=' + dayToMinute,
 		success: function (result) {
 
 			var markers = [];
@@ -146,12 +146,13 @@ function initialize() {
 	});
 
 	google.maps.event.addDomListener(map, 'click', function (event) {
-		window.console && console.log('clicked', event);
+		// window.console && console.log('clicked', event);
 		markers.push(addMarker(map, event.latLng));
-		newOutagePoints.push({ latitude: event.latLng.A, longitude: event.latLng.F, duration_in_hours: Math.round(Math.random() * 25) });
+		newOutagePoints.push({ latitude: event.latLng.lat(), longitude: event.latLng.lng(), duration_in_hours: Math.round(Math.random() * 25) });
 		// var newPointsJsonString = JSON.stringify(newOutagePoints, null, '\t');
 		var newPointsJsonString = JSON.stringify(newOutagePoints);
-		$('#codeText').html(newPointsJsonString.substring(1,newPointsJsonString.length - 1).replace(/\}/g,'}\n'));
+		// window.console && console.log(newPointsJsonString);
+		$('#codeText').val(newPointsJsonString.substring(1,newPointsJsonString.length - 1).replace(/\}/g,'}\n'));
 	});
 
 	$('#removeMarkers').click(function (event) {
@@ -161,7 +162,7 @@ function initialize() {
 		}
 		markers = [];
 		newOutagePoints = [];
-		$('#codeText').html('');
+		$('#codeText').val('');
 	});
 }
 

@@ -159,7 +159,7 @@ function initialize() {
 
 		geocoder.geocode({address: address}, function (results, status) {
 			if (status === google.maps.GeocoderStatus.OK) {
-				window.console && console.log(results);
+				// window.console && console.log(results);
 				map.setCenter(results[0].geometry.location);
 
 				if (results[0].geometry.bounds) {
@@ -176,12 +176,16 @@ function initialize() {
 	$.ajax({
 		// url: 'JSON/fn-outages-test.json?t=' + Math.round(Math.random() *1000000000),
 		// url: 'JSON/fn-outages-test.json?t=' + dayToMinute,
-		url: 'JSON/fn-outages-test.json?t=' + currentDate.getTime(),
+		url: '/JSON/fn-outages-test.json?t=' + currentDate.getTime(),
 		contentType: 'application/json',
 		dataType: 'json',
 		success: function (result) {
-			var jsonResult = JSON.parse(result);
-			window.console && console.log(jsonResult, result);
+			// window.console && console.log(result);
+
+			// if result is a JSON string then parse, but you shouldn't need to since contentType and dataType of JSON is passed in the AJAX call
+			// var jsonResult = JSON.parse(result);
+			jsonResult = result;
+			// window.console && console.log(jsonResult, result);
 
 			var markers = [];
 			for (var i = 0, outage; outage = result.outages[i]; i++) {

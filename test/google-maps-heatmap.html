@@ -43,7 +43,7 @@ function initialize() {
 	var map = new google.maps.Map(mapCanvas, mapOptions);
 
 	$.ajax({
-		url: 'JSON/fn-outages.json',
+		url: '/JSON/fn-outages.json',
 		success: function (result) {
 			// window.console && console.log(result);
 			var p1 = new google.maps.LatLng(result.outages[1].latitude, result.outages[1].longitude);
